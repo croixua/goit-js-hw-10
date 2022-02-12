@@ -11,7 +11,12 @@ const DEBOUNCE_DELAY = 300;
 inputRef.addEventListener('input', onInput);
 
 function onInput(e) {
-  const name = e.target.value;
+  const name = e.target.value.trim();
+
+  if (name === '') {
+    countryInfoRef.innerHTML = '';
+    return;
+  }
 
   fetchCountries(name, countryInfoRef);
 }

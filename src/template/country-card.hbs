@@ -1,6 +1,10 @@
 {{#each this}}
     <h2 class="card-titile">
-        {{flag}} {{name.common}}
+        {{!-- <svg class="flag" width="40" height="40">
+            <use href="{{flags.svg}}"></use>
+        </svg>  --}}
+        {{flag}}
+        {{name.common}}
     </h2>
         <p class="card-text">Capital: {{capital}}</p>
         <p class="card-text">Population: {{population}}</p>
