@@ -3,22 +3,24 @@ import './css/styles.css';
 import countryCard from './template/country-card.hbs';
 import fetchCountries from './js/fetchCountries';
 
+const inputRef = document.querySelector('#search-box');
+const countryListRef = document.querySelector('.country-list');
+const countryInfoRef = document.querySelector('.country-info');
 const DEBOUNCE_DELAY = 300;
+const BASE_URL_NAME = 'https://restcountries.com/v3.1/';
 
-fetch('https://restcountries.com/v3.1/name/peru')
-  .then(response => response.json())
-  .then(country => {
-    console.log(country[0].languages);
-    const markup = countryCard(country);
-    console.log(markup);
-  });
+inputRef.addEventListener('input', onInput);
 
-// console.log(countryCard());
+function onInput(e) {
+  const name = e.target.value;
 
-// fetch('https://restcountries.com/v3.1/name/peru?')
-//   .then(response => response.json())
-//   .then(country => {
-//     console.log(country[0].languages);
-//     const markup = countryCard(country[0]);
-//     console.log(markup);
-//   });
+  // fetchCountries(name);
+
+  fetch(`${BASE_URL_NAME}name/${name}`)
+    .then(response => response.json())
+    .then(country => {
+      const markup = countryCard(country);
+
+      countryInfoRef.innerHTML = markup;
+    });
+}
