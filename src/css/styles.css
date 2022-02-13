@@ -19,11 +19,30 @@ body {
   margin-bottom: 16px;
 }
 
+.card-titile {
+  display: flex;
+  align-items: center;
+}
+
+.card-flag {
+  margin-right: 10px;
+}
+
 .card-text {
   list-style: none;
   display: flex;
   padding-left: 0;
 }
 
-.flag {
+.cards-flag {
+  margin-right: 10px;
+}
+
+.cards-item {
+  display: flex;
+  align-items: center;
+}
+
+.cards-item + .cards-item {
+  margin-top: 10px;
 }

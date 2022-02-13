@@ -1,16 +1,14 @@
 {{#each this}}
     <h2 class="card-titile">
-        {{!-- <svg class="flag" width="40" height="40">
-            <use href="{{flags.svg}}"></use>
-        </svg>  --}}
-        {{flag}}
-        {{name.common}}
+        <img class="card-flag" src="{{flags.svg}}" alt="" width="40" >
+        {{!-- {{flag}} --}}
+        {{name.official}}
     </h2>
-        <p class="card-text">Capital: {{capital}}</p>
-        <p class="card-text">Population: {{population}}</p>
-        <ul class="card-text">Languages:&nbsp;
+        <p class="card-text"> <b>Capital:</b>&nbsp;{{capital}}</p>
+        <p class="card-text"><b>Population:</b>&nbsp;{{population}}</p>
+        <ul class="card-text"><b>Languages:</b>&nbsp;
             {{#each languages}}
-                {{#if @last}} <li> {{this}}</li> {{else}} <li> {{this}},&nbsp;</li>{{/if}}
+                {{#if @last}} <li>{{this}}</li> {{else}} <li> {{this}},&nbsp;</li>{{/if}}
             {{/each}}
         </ul>
         </p>

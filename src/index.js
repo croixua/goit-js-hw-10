@@ -11,7 +11,6 @@ inputRef.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(e) {
   const name = e.target.value.trim();
-  console.log(name);
 
   if (name === '') {
     resetMarkup();
